@@ -1,3 +1,4 @@
+from re import L
 from pymongo import MongoClient
 import json
 
@@ -11,4 +12,18 @@ for inv in inventory:  # inventory내의 객체 1개씩 출력
     print(inv)
 
 # inventory 변수에 insert
-newInvent = {"item": "speaker", "qty": 50, "size": {"h": 22, "w": 22, "uom": "cm"}, "status":"S"}
+newInvent = {
+    "item": "speaker",
+    "qty": 50,
+    "size": {"h": 22, "w": 22, "uom": "cm"},
+    "status": "S",
+}
+# db.inventory.insert_one(newInvent)
+# inventory = db.inventory.find()
+# for inv in inventory:  # inventory내의 객체 1개씩 출력
+#     print(inv)
+
+db.inventory.update_many({"status": "P"}, {"$set": {"status": "C"}})
+inventory = db.inventory.find()
+for inv in inventory:
+    print(inv)
