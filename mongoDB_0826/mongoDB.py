@@ -9,6 +9,7 @@
 # db.collection명.drop() 으로 제거
 # db.collection명.insertOne/Many(document) 로 생성
 # db.collection명.remove(criteria[, justOne])으로 document 제거
+# db.createCollection 으로 컬렉션 생성가능
 
 # mongoDB 종료
 # use admin => db.shutdownServer()

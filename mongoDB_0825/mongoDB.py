@@ -7,7 +7,8 @@
 # ])
 # tags >> 배열로 삽입
 
-# db.inventory.find({item: " note"})    # inventory >> 컬렉션명
+# db.inventory.find({item: "note"})    # inventory >> 컬렉션명
+# 넣는 값이 1개면 "", 두개면 [], 3개면{}
 # 조회 조건을 안준 상태 db.inventory.find() 는 해당 컬렉션의 모든 documents 보여줌
 # 조회 조건은 JSON 상태( {} ) 안에 작성 == sql 에서 where 절 안의 내용과 동일
 
@@ -111,12 +112,12 @@ db.inventory.find(
     {"tags" : "red"}
 ).pretty()
 
-# dim_cm 도큐먼트 값으로 25이상을 하나라도 갖고있는애 출력
+# dim_cm 도큐먼트 값으로 25초과 하나라도 갖고있는애 출력
 db.inventory.find(
     {"dim_cm" : {$gt: 25}}
 )
 
-# # dim_cm 도큐먼트 값으로 15이상 20
+# # dim_cm 도큐먼트 값으로 15초과 20미만
 # db.inventory.find(
 #     {"dim_cm" : {$gt: 15, $lt: 20}}
 # )
